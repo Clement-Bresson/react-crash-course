@@ -14,11 +14,13 @@ const PropTypes = require('prop-types');
              -> compiling -> error
                           -> source
 */
-const Result = React.createClass({
-  getInitialState: function() {
-    return this.setup(this.props);
-  },
-  href: function({
+class Result extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = this.setup(props);
+  }
+
+  href({
     slug,
     pathname
   }) {
@@ -33,13 +35,15 @@ const Result = React.createClass({
         slug
       }
     });
-  },
-  get: function(ctx) {
+  }
+
+  get(ctx) {
     return fetch(this.href(ctx)).then((res) => {
       return res.json();
     });
-  },
-  compile: function(slug) {
+  }
+
+  compile(slug) {
     this.setState({
       validating: false,
       compiling: true
@@ -49,19 +53,22 @@ const Result = React.createClass({
       pathname: '/compile',
       slug
     });
-  },
-  exports: function(slug) {
+  }
+
+  exports(slug) {
     return this.get({
       pathname: '/exports',
       slug
     });
-  },
-  onError: function(err) {
+  }
+
+  onError(err) {
     this.setState({
       error: err
     });
-  },
-  setup: function(props) {
+  }
+
+  setup(props) {
     const {
       slug
     } = props;
@@ -94,8 +101,9 @@ const Result = React.createClass({
     return {
       validating: true
     };
-  },
-  componentWillReceiveProps: function(nextProps) {
+  }
+
+  componentWillReceiveProps(nextProps) {
     // reset state and get new one
     this.setState(Object.assign({
       validating: false,
@@ -104,8 +112,9 @@ const Result = React.createClass({
       component: false,
       source: false
     }, this.setup(nextProps)));
-  },
-  renderLive: function(slug) {
+  }
+
+  renderLive(slug) {
     let Component = null;
     let component = null;
 
@@ -127,8 +136,9 @@ const Result = React.createClass({
       validating: false,
       component
     });
-  },
-  renderSource: function() {
+  }
+
+  renderSource() {
     const {
       slug
     } = this.props;
@@ -144,8 +154,9 @@ const Result = React.createClass({
         src={href}
       />
     );
-  },
-  render: function() {
+  }
+
+  render() {
     const {
       error,
       compiling,
@@ -215,7 +226,7 @@ const Result = React.createClass({
       </div>
     );
   }
-});
+};
 
 Result.propTypes = {
   slug: PropTypes.string
