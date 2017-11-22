@@ -1,6 +1,6 @@
 ## Intro
 
-Most of the time your components don't manage any state. When that's the case, having a a full class with all of the state and lifecycle logic associated with it can be overkill. Stateless components solve that problem:
+In the last exercise we created our first component using `React.Component` and we mention that this is used when a component needs to deal with state inside it, e.g a something changed and we need to update. However, most of the time your components don't manage any state. When that's the case, having a a full class with all of the state and lifecycle logic associated with it can be overkill. **Stateless components** are simpler and solve that problem:
 
 ```js
 const Anchor = (props) => {
@@ -42,4 +42,4 @@ Much like the Node.js concept of having tiny modules that compose on each-other 
 
 ## Challenge!
 
- * Edit `index.js`, `GuestList.js`, `Guest.js`, `BirthdayInfo.js` so that every component that can be a stateless component, is a stateless component.
+ * Edit `index.js` and `BirthdayInfo.js` so that every component that can be a stateless component, is a stateless component.

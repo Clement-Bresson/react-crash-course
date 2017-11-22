@@ -14,7 +14,7 @@ class Anchor extends React.Component {
 };
 ```
 
-Here we are creating a component named `Anchor`, that will render an anchor tag with an `href` that points to the *YLD* website.
+Here we are creating a component named `Anchor`, that will render an anchor tag with an `href` that points to the *YLD* website. We want to use `React.Component` when we want to deal with **state** inside a component.
 
 You might find this syntax odd: we are mixing HTML with JavaScript.
 
