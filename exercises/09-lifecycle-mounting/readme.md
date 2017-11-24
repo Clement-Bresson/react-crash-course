@@ -27,11 +27,8 @@ You can use `componentDidMount` to start logic in the component, like some async
 
 ## Challenge!
 
-Edit `index.js` so that:
-  1. `componentWillMount` has an implementation where it mutates `this.state.count` to `2`. Observe the resulting view and the log;
-  2. `componentDidMount` has an implementation where it logs both the current state and the component's DOMNode using `ReactDOM.findDOMNode`;
+* Edit `index.js` so that `componentWillMount` has an implementation where it mutates `this.state.count` to `2`. Observe the resulting view and the log.
 
 ## Resources
 
  * [Lifecycle Methods](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods)
- * [findDOMNode](https://facebook.github.io/react/docs/react-dom.html#finddomnode)
